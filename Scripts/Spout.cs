@@ -47,6 +47,8 @@ namespace Spout {
 		//You can use a fakeName of your choice .It's just to force an update in the Spout Receiver at start even if the 'offical' sharingName doesn't change.
 		public static string fakeName = "SpoutIsSuperCoolAndMakesFun";
 
+        public bool receiveEnableOnStart = true;
+
 		private IntPtr intptr_senderUpdate_delegate;
 		private IntPtr intptr_senderStarted_delegate;
 		private IntPtr intptr_senderStopped_delegate;
@@ -127,6 +129,7 @@ namespace Spout {
 
 
         int count;
+
 		protected virtual void Update() {
             if (isReceiving)
             {
@@ -191,7 +194,7 @@ namespace Spout {
 
 		private void _Init() {
 			initNative();
-			_startReceiving();
+            if (receiveEnableOnStart)_startReceiving();
 			_isInit = true;
 		} 		
 		private void _CleanUpResources(){
