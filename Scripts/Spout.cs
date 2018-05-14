@@ -47,7 +47,7 @@ namespace Spout {
 		//You can use a fakeName of your choice .It's just to force an update in the Spout Receiver at start even if the 'offical' sharingName doesn't change.
 		public static string fakeName = "SpoutIsSuperCoolAndMakesFun";
 
-        public bool receiveEnableOnStart = true;
+        public bool receiveEnableOnStart = false;
 
 		private IntPtr intptr_senderUpdate_delegate;
 		private IntPtr intptr_senderStarted_delegate;
