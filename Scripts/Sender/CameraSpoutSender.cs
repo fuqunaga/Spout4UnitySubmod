@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
-using System.Collections;
 
-namespace Spout {
-	[RequireComponent(typeof(Camera))]
+namespace Spout
+{
+    [RequireComponent(typeof(Camera))]
 	public class CameraSpoutSender : ProceduralSpoutSenderBase {
 		Camera _attachedCam;
 

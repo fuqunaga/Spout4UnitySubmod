@@ -18,7 +18,9 @@ namespace Spout {
 		RenderTexture _tex;
 		SpoutSenderImpl _impl;
 
-		protected abstract void NotifyOnUpdateTexture(RenderTexture tex);
+        public RenderTexture texture => _tex;
+
+        protected abstract void NotifyOnUpdateTexture(RenderTexture tex);
 
 		protected virtual void Awake() {
 			Spout.instance.OnEnabled-= _OnSpoutEnabled;
