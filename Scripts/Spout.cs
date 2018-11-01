@@ -84,7 +84,11 @@ namespace Spout {
 						GameObject _go = new GameObject("Spout");			
 						_instance = _go.AddComponent<Spout>();
 					}
-					DontDestroyOnLoad(_instance.gameObject);
+
+                    if (Application.isPlaying)
+                    {
+                        DontDestroyOnLoad(_instance.gameObject);
+                    }
 				}
 				return _instance;
 			}

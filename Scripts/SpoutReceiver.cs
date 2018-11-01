@@ -5,12 +5,11 @@
 * All rights reserved
 */
 using UnityEngine;
-using System.Collections;
 using System;
 
-namespace Spout{
-[Serializable]
-	[ExecuteInEditMode]
+namespace Spout
+{
+    [Serializable]
 	public class SpoutReceiver : MonoBehaviour {
 		
 		[SerializeField]
@@ -172,20 +171,9 @@ namespace Spout{
 					{
 						if(sharingName != Spout.fakeName)Debug.LogWarning ("Sender "+sharingName+" does not exist");
 						texture = Spout.nullTexture;
-						/*
-						texture = new Texture2D(32,32);
-						//new Texture2D(32,32,TextureFormat.RGBA32,true,true);
-						texture.hideFlags = HideFlags.HideAndDontSave;
-						*/
 					}
-					
 				}
-
 			}
 		}
-
-
-		
-		
 	}
 }
