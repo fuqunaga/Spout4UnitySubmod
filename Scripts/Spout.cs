@@ -6,13 +6,13 @@
 */
 using UnityEngine;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
-using System.Linq;
 
-namespace Spout {
+namespace Spout
+{
 
+    [ExecuteInEditMode]
 	public class Spout : MonoBehaviour {
 
 		public  event EventHandler<TextureShareEventArgs> OnSenderStopped;
