@@ -1,5 +1,4 @@
-﻿//http://docs.unity3d.com/412/Documentation/ScriptReference/Camera.OnPreCull.html
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
 namespace Spout{
@@ -7,15 +6,15 @@ namespace Spout{
 	[RequireComponent (typeof(Camera))]
 	[ExecuteInEditMode]
 	public class InvertCamera : MonoBehaviour {
-		//public Camera camera;
-		void Start () {
-			//camera = get
-		}
+
+        Camera camera_;
 		
 		void OnPreCull () {
-			GetComponent<Camera>().ResetWorldToCameraMatrix();
-			GetComponent<Camera>().ResetProjectionMatrix();
-			GetComponent<Camera>().projectionMatrix = GetComponent<Camera>().projectionMatrix * Matrix4x4.Scale(new Vector3(1, -1, 1));
+            var cam = camera_ ?? (camera_ = GetComponent<Camera>());
+
+			cam.ResetWorldToCameraMatrix();
+			cam.ResetProjectionMatrix();
+			cam.projectionMatrix = cam.projectionMatrix * Matrix4x4.Scale(new Vector3(1, -1, 1));
 		}
 		
 		void OnPreRender () {
