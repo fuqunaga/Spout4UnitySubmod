@@ -109,8 +109,7 @@ namespace Spout
 			activeLocalSenders = new List<TextureInfo>();
 			localSenderNames = new HashSet<string>();
 
-			_nullTexture = new Texture2D(32,32);
-			_nullTexture.hideFlags = HideFlags.HideAndDontSave;
+            _nullTexture = Texture2D.blackTexture;
 
 		}
 
