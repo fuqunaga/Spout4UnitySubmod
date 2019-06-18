@@ -205,15 +205,20 @@ namespace Spout
 			
 			_instance.texSharedDelegate = null;
 			_instance.senderStoppedDelegate = null;
-			
-			_instance.handleSenderUpdate.Free(); 
-			_instance.handleSenderStarted.Free();
-			_instance.handleSenderStopped.Free();
+
+            Free(_instance.handleSenderUpdate);
+			Free(_instance.handleSenderStarted);
+            Free(_instance.handleSenderStopped);
 
 			intptr_senderUpdate_delegate = IntPtr.Zero;
 			intptr_senderStarted_delegate = IntPtr.Zero;
 			intptr_senderStopped_delegate = IntPtr.Zero;
 		}
+
+        protected void Free(GCHandle handle)
+        {
+            if (handle.IsAllocated) handle.Free();
+        }
 
 		
 		public void addListener(TextureSharedDelegate sharedCallback, SenderStoppedDelegate stoppedCallback ) {
